@@ -23,7 +23,8 @@ class SecondViewController: UIViewController {
         super.viewDidLoad()
         
         // 背景色を設定.
-        self.view.backgroundColor = UIColor.blueColor()
+//        self.view.backgroundColor = UIColor.blueColor()
+        self.view.backgroundColor = UIColor.hexStr("79c0fe", alpha: 1)
         
         // UIボタンを作成
         myButtonBefore = UIButton(frame: CGRectMake(0,0,120,50))
@@ -36,10 +37,10 @@ class SecondViewController: UIViewController {
         self.view.addSubview(myButtonBefore);
         
         // ボタンの生成する.
-        myButtonToNote = UIButton(frame: CGRectMake(0,0,120,50))
+        myButtonToNote = UIButton(frame: CGRectMake(0,0,220,50))
         myButtonToNote.backgroundColor = UIColor.redColor();
         myButtonToNote.layer.masksToBounds = true
-        myButtonToNote.setTitle("Modeling", forState: .Normal)
+        myButtonToNote.setTitle("Infomation Network", forState: .Normal)
         myButtonToNote.layer.cornerRadius = 20.0
         myButtonToNote.layer.position = CGPoint(x: self.view.bounds.width/2 , y:self.view.bounds.height-150)
         myButtonToNote.addTarget(self, action: "onClickMyButtonToNext:", forControlEvents: .TouchUpInside)

@@ -10,46 +10,92 @@ import Foundation
 
 import UIKit;
 
-class PDFViewController: UIViewController ,UIWebViewDelegate{
+class PDFViewController: UIViewController, UIWebViewDelegate {
     
-    var webview: UIWebView = UIWebView()
-    
+    //var webview: UIWebView = UIWebView()
+    var myButtonToBack: UIButton!
+    var nextpage: UIButton!
+    var backpage: UIButton!
+    var page : UInt = 1
+    var number_of_page :UInt!
+   //
+   // var noteurl : String!
+   // init(url: String) {
+   //     self.noteurl = url
+   // }
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        //var url = NSURL(noteurl)
+        var url = NSURL(string: "http://ie.u-ryukyu.ac.jp/~e135761/PostingNote/information6.pdf")
+        //var url:NSURL! = NSBundle.mainBundle().URLForResource("http://ie.u-ryukyu.ac.jp/~e135761/PostingNote/information6.pdf", withExtension:nil)
+        var pdf:CGPDFDocumentRef = CGPDFDocumentCreateWithURL(url);
+        var rect = UIScreen.mainScreen().bounds;
         
-        self.webview.frame = self.view.bounds
-        self.webview.delegate = self;
-        self.view.addSubview(self.webview)
+        number_of_page = CGPDFDocumentGetNumberOfPages(pdf)
+        
+        var myview:PDFView = PDFView(frame:rect);
+        myview._pdfPage = CGPDFDocumentGetPage(pdf, page)
+        self.view.addSubview(myview)
         
         
-        var url : NSURL!
-        url = NSURL(string: "http://ie.u-ryukyu.ac.jp/~e135761/PostingNote/e135761.pdf")
-        UIApplication.sharedApplication().openURL(url)
-        var urlRequest: NSURLRequest = NSURLRequest(URL: url)
-        self.webview.loadRequest(urlRequest)
-        
-        //ボタンを作成する記述
-        var button :UIButton =
-        UIButton(frame: CGRectMake(270, 590, 100, 50));
-        button.backgroundColor =
-            UIColor(red: 0.0, green: 1.0, blue: 0.0, alpha: 1.0);
-        button.addTarget(self, action: "btn:", forControlEvents:.TouchUpInside);
-        button.setTitle("return", forState: .Normal);
-        button.setTitleColor(UIColor.blueColor(), forState: .Normal);
-        
-        //これで枠が作られ、少し角が丸くなる
-        button.layer.cornerRadius = 10;
-        button.layer.borderWidth = 1;
+        myButtonToBack = UIButton(frame: CGRectMake(0,0,90,40))
+        myButtonToBack.backgroundColor = UIColor.redColor();
+        myButtonToBack.layer.masksToBounds = true
+        myButtonToBack.setTitle("back", forState: .Normal)
+        myButtonToBack.layer.cornerRadius = 20.0
+        myButtonToBack.layer.position = CGPoint(x: self.view.bounds.width*3/4 , y:self.view.bounds.height-35)
+        myButtonToBack.addTarget(self, action: "btn:", forControlEvents: .TouchUpInside)
         
         //Viewに追加
-        self.view.addSubview(button);
+        self.view.addSubview(myButtonToBack);
+        
+        nextpage = UIButton(frame: CGRectMake(0,0,90,40))
+        nextpage.backgroundColor = UIColor.redColor();
+        nextpage.layer.masksToBounds = true
+        nextpage.setTitle(" => ", forState: .Normal)
+        nextpage.layer.cornerRadius = 20.0
+        nextpage.layer.position = CGPoint(x: self.view.bounds.width*2/4 , y:self.view.bounds.height-35)
+        nextpage.addTarget(self, action: "next:", forControlEvents: .TouchUpInside)
+        
+        //Viewに追加
+        self.view.addSubview(nextpage);
+        
+        backpage = UIButton(frame: CGRectMake(0,0,90,40))
+        backpage.backgroundColor = UIColor.redColor();
+        backpage.layer.masksToBounds = true
+        backpage.setTitle(" <= ", forState: .Normal)
+        backpage.layer.cornerRadius = 20.0
+        backpage.layer.position = CGPoint(x: self.view.bounds.width*1/4 , y:self.view.bounds.height-35)
+        backpage.addTarget(self, action: "back:", forControlEvents: .TouchUpInside)
+        
+        //Viewに追加
+        self.view.addSubview(backpage);
+        
     }
+    
+    func didReceieveMemoryWarning(){
+        super.didReceiveMemoryWarning()
+    }
+    
+    
+    func next(sender: UIButton) {
+        if (page < number_of_page) {
+            page += 1
+            viewDidLoad()
+        }
+    }
+    
+    func back(sender: UIButton) {
+        if (page > 1) {
+            page -= 1
+            viewDidLoad()
+        }
+    }
+    
     
     //ボタンがタップされたときの処理メソッド
     func btn(sender: UIButton) {
         // 遷移するViewを定義.
-        // ここでURLに飛ぶようにしたい
         let myViewController: UIViewController = ThirdViewController()
         
         // アニメーションを設定.
@@ -64,4 +110,18 @@ class PDFViewController: UIViewController ,UIWebViewDelegate{
         return true
     }
     
+}
+
+class PDFView: UIView {
+    var _pdfPage: CGPDFPageRef?
+    override func drawRect(rect: CGRect){
+        var context:CGContextRef = UIGraphicsGetCurrentContext();
+        CGContextScaleCTM(context, 1.0, -1.0);
+        CGContextTranslateCTM(context, 0, -CGRectGetHeight(rect));
+        var pdfRect:CGRect = CGPDFPageGetBoxRect(_pdfPage, kCGPDFArtBox)
+        CGContextScaleCTM(context,
+            rect.size.width/pdfRect.size.width,
+                          rect.size.height/pdfRect.size.height)
+         CGContextDrawPDFPage(context, _pdfPage)
+    }
 }

@@ -22,8 +22,8 @@ class FirstViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // 背景色をGreenに設定する.
-        self.view.backgroundColor = UIColor.greenColor()
+        // 背景色を設定する.
+        self.view.backgroundColor = UIColor.hexStr("79c0fe", alpha: 1)
         
         // ボタンの生成する.
         myButtonNext = UIButton(frame: CGRectMake(0,0,120,50))

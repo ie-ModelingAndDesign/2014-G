@@ -17,7 +17,7 @@
 		2F83AA521A3006A00033E7E2 /* hogeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F83AA511A3006A00033E7E2 /* hogeTests.swift */; };
 		2FA7B3711A389F2800F54021 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FA7B3701A389F2800F54021 /* ThirdViewController.swift */; };
 		2FD99DCB1A39397F0086757E /* PDFViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD99DCA1A39397F0086757E /* PDFViewController.swift */; };
-		2FD99DCD1A3940250086757E /* PDFViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD99DCC1A3940250086757E /* PDFViewController.swift */; };
+		2FEB12731A3CADA5007BC0E0 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FEB12721A3CADA5007BC0E0 /* Color.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,7 +45,7 @@
 		2F83AA511A3006A00033E7E2 /* hogeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hogeTests.swift; sourceTree = "<group>"; };
 		2FA7B3701A389F2800F54021 /* ThirdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
 		2FD99DCA1A39397F0086757E /* PDFViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PDFViewController.swift; sourceTree = "<group>"; };
-		2FD99DCC1A3940250086757E /* PDFViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PDFViewController.swift; path = ../../team_g/PDFViewController.swift; sourceTree = "<group>"; };
+		2FEB12721A3CADA5007BC0E0 /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,8 +95,8 @@
 				2F7CBF6D1A37607000E1BB17 /* FirstViewController.swift */,
 				2F7CBF6F1A3760A900E1BB17 /* SecondViewController.swift */,
 				2FA7B3701A389F2800F54021 /* ThirdViewController.swift */,
+				2FEB12721A3CADA5007BC0E0 /* Color.swift */,
 				2FD99DCA1A39397F0086757E /* PDFViewController.swift */,
-				2FD99DCC1A3940250086757E /* PDFViewController.swift */,
 				2F83AA391A3006A00033E7E2 /* Supporting Files */,
 			);
 			path = hoge;
@@ -229,10 +229,10 @@
 			files = (
 				2F7CBF701A3760A900E1BB17 /* SecondViewController.swift in Sources */,
 				2F7CBF6E1A37607000E1BB17 /* FirstViewController.swift in Sources */,
+				2FEB12731A3CADA5007BC0E0 /* Color.swift in Sources */,
 				2FA7B3711A389F2800F54021 /* ThirdViewController.swift in Sources */,
 				2FD99DCB1A39397F0086757E /* PDFViewController.swift in Sources */,
 				2F83AA3E1A3006A00033E7E2 /* ViewController.swift in Sources */,
-				2FD99DCD1A3940250086757E /* PDFViewController.swift in Sources */,
 				2F83AA3C1A3006A00033E7E2 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
