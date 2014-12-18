@@ -19,14 +19,14 @@ class PDFViewController: UIViewController, UIWebViewDelegate {
     var page : UInt = 1
     var number_of_page :UInt!
    //
-   // var noteurl : String!
+    var noteurl : String!
    // init(url: String) {
    //     self.noteurl = url
    // }
     override func viewDidLoad() {
         super.viewDidLoad()
-        //var url = NSURL(noteurl)
-        var url = NSURL(string: "http://ie.u-ryukyu.ac.jp/~e135761/PostingNote/information6.pdf")
+        var url = NSURL(string :noteurl)
+        //var url = NSURL(string: "http://ie.u-ryukyu.ac.jp/~e135761/PostingNote/information6.pdf")
         //var url:NSURL! = NSBundle.mainBundle().URLForResource("http://ie.u-ryukyu.ac.jp/~e135761/PostingNote/information6.pdf", withExtension:nil)
         var pdf:CGPDFDocumentRef = CGPDFDocumentCreateWithURL(url);
         var rect = UIScreen.mainScreen().bounds;
@@ -49,7 +49,7 @@ class PDFViewController: UIViewController, UIWebViewDelegate {
         //Viewに追加
         self.view.addSubview(myButtonToBack);
         
-        nextpage = UIButton(frame: CGRectMake(0,0,90,40))
+        nextpage = UIButton(frame: CGRectMake(0,0,70,40))
         nextpage.backgroundColor = UIColor.redColor();
         nextpage.layer.masksToBounds = true
         nextpage.setTitle(" => ", forState: .Normal)
@@ -60,7 +60,7 @@ class PDFViewController: UIViewController, UIWebViewDelegate {
         //Viewに追加
         self.view.addSubview(nextpage);
         
-        backpage = UIButton(frame: CGRectMake(0,0,90,40))
+        backpage = UIButton(frame: CGRectMake(0,0,70,40))
         backpage.backgroundColor = UIColor.redColor();
         backpage.layer.masksToBounds = true
         backpage.setTitle(" <= ", forState: .Normal)
@@ -80,6 +80,7 @@ class PDFViewController: UIViewController, UIWebViewDelegate {
     
     func next(sender: UIButton) {
         if (page < number_of_page) {
+            UIModalTransitionStyle.FlipHorizontal
             page += 1
             viewDidLoad()
         }
@@ -87,6 +88,7 @@ class PDFViewController: UIViewController, UIWebViewDelegate {
     
     func back(sender: UIButton) {
         if (page > 1) {
+            UIModalTransitionStyle.FlipHorizontal
             page -= 1
             viewDidLoad()
         }

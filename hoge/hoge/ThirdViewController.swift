@@ -30,7 +30,7 @@ class ThirdViewController: UIViewController {
         myButtonToNote = UIButton(frame: CGRectMake(0,0,120,50))
         myButtonToNote.backgroundColor = UIColor.redColor();
         myButtonToNote.layer.masksToBounds = true
-        myButtonToNote.setTitle("7th Lecture", forState: .Normal)
+        myButtonToNote.setTitle("6th Lecture", forState: .Normal)
         myButtonToNote.layer.cornerRadius = 20.0
         myButtonToNote.layer.position = CGPoint(x: self.view.bounds.width/2 , y:self.view.bounds.height-150)
         myButtonToNote.addTarget(self, action: "onClickMyButtonToNext:", forControlEvents: .TouchUpInside)
@@ -56,9 +56,10 @@ class ThirdViewController: UIViewController {
         
         // 遷移するViewを定義.
         // ここでURLに飛ぶようにしたい
-        //let noteurl = "http://ie.u-ryukyu.ac.jp/~e135761/PostingNote/information6.pdf"
+        let noteurl = "http://ie.u-ryukyu.ac.jp/~e135761/PostingNote/information6.pdf"
         //let myViewController: UIViewController = PDFViewController(noteurl)
-        let myViewController: UIViewController = PDFViewController()
+        let myViewController = PDFViewController()
+        myViewController.noteurl = noteurl
         
         // アニメーションを設定.
         myViewController.modalTransitionStyle = UIModalTransitionStyle.FlipHorizontal

@@ -26,6 +26,7 @@ class FirstViewController: UIViewController {
         self.view.backgroundColor = UIColor.hexStr("79c0fe", alpha: 1)
         
         // ボタンの生成する.
+        // 学年選択ボタン
         myButtonNext = UIButton(frame: CGRectMake(0,0,120,50))
         myButtonNext.backgroundColor = UIColor.redColor();
         myButtonNext.layer.masksToBounds = true
@@ -45,6 +46,7 @@ class FirstViewController: UIViewController {
     func onClickMyButton(sender: UIButton){
         
         // 遷移するViewを定義する.
+        // 次の授業選択に移動する
         let mySecondViewController: UIViewController = SecondViewController()
         
         // アニメーションを設定する.
