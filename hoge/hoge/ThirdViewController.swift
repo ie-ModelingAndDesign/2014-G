@@ -56,7 +56,7 @@ class ThirdViewController: UIViewController {
         
         // 遷移するViewを定義.
         // ここでURLに飛ぶようにしたい
-        let noteurl = "http://ie.u-ryukyu.ac.jp/~e135761/PostingNote/information6.pdf"
+        let noteurl = "http://ie.u-ryukyu.ac.jp/~e135761/PostingNote/information/information6.pdf"
         //let myViewController: UIViewController = PDFViewController(noteurl)
         let myViewController = PDFViewController()
         myViewController.noteurl = noteurl
