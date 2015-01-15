@@ -66,7 +66,7 @@ class ThirdViewController: UIViewController {
         
         // Viewの移動.
         self.presentViewController(myViewController, animated: true, completion: nil)
-        
+        //self.presentViewController(Filereader(), animated: true, completion: nil)
     }
     
     //
