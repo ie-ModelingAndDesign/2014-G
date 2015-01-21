@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2F57E4D01A5E2669003550E1 /* Filereader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F57E4CF1A5E2669003550E1 /* Filereader.swift */; };
 		2F7CBF6E1A37607000E1BB17 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F7CBF6D1A37607000E1BB17 /* FirstViewController.swift */; };
 		2F7CBF701A3760A900E1BB17 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F7CBF6F1A3760A900E1BB17 /* SecondViewController.swift */; };
 		2F83AA3C1A3006A00033E7E2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F83AA3B1A3006A00033E7E2 /* AppDelegate.swift */; };
@@ -37,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2F57E4CF1A5E2669003550E1 /* Filereader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Filereader.swift; sourceTree = "<group>"; };
 		2F7CBF6D1A37607000E1BB17 /* FirstViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		2F7CBF6F1A3760A900E1BB17 /* SecondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		2F83AA361A3006A00033E7E2 /* hoge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hoge.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -112,6 +114,7 @@
 				2F7CBF6F1A3760A900E1BB17 /* SecondViewController.swift */,
 				2FA7B3701A389F2800F54021 /* ThirdViewController.swift */,
 				2FEB12721A3CADA5007BC0E0 /* Color.swift */,
+				2F57E4CF1A5E2669003550E1 /* Filereader.swift */,
 				2FD99DCA1A39397F0086757E /* PDFViewController.swift */,
 				2F83AA391A3006A00033E7E2 /* Supporting Files */,
 			);
@@ -337,6 +340,7 @@
 				2FA7B3711A389F2800F54021 /* ThirdViewController.swift in Sources */,
 				2FD99DCB1A39397F0086757E /* PDFViewController.swift in Sources */,
 				2F83AA3E1A3006A00033E7E2 /* ViewController.swift in Sources */,
+				2F57E4D01A5E2669003550E1 /* Filereader.swift in Sources */,
 				2F83AA3C1A3006A00033E7E2 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

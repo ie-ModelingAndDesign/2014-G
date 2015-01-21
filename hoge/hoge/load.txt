@@ -1,0 +1,2 @@
+infomation/infomation6.pdf,infomation_network,info6,e135761
+architecture/e135761.pdf,architecture,archi1,e135761
