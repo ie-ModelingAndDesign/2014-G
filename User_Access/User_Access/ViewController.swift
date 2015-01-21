@@ -31,11 +31,11 @@ class ViewController: UIViewController, FBLoginViewDelegate {
     
     func loginViewFetchedUserInfo(loginView: FBLoginView!, user: FBGraphUser!) {
         println("User Name: \(user.name)")
-        var profileImage = UIImage(data: NSData(contentsOfURL: NSURL(string: "https://graph.facebook.com/\(user.objectID)/picture?type=large")!)!) // プロフィール画像の取得
+        /*var profileImage = UIImage(data: NSData(contentsOfURL: NSURL(string: "https://graph.facebook.com/\(user.objectID)/picture?type=large")!)!) // プロフィール画像の取得
         self.userImage.clipsToBounds = true // 画像にレイヤーをつけて、
         self.userImage.layer.cornerRadius = 60 // 円形にする
         
-        self.userImage.image = trimPicture(profileImage!) // 画像をトリミング
+        self.userImage.image = trimPicture(profileImage!) // 画像をトリミング*/
         self.currentUserName.text = user.name
         self.currentUserEmail.text = user.objectForKey("email") as? String
 
@@ -45,7 +45,7 @@ class ViewController: UIViewController, FBLoginViewDelegate {
     func loginViewShowingLoggedOutUser(loginView : FBLoginView!) {
         println("User Logged Out")
         self.userImage.image = nil
-        self.currentUserName.text = "You're not logged in!"
+        self.currentUserName.text = ""
         self.currentUserEmail.text = ""
     }
     

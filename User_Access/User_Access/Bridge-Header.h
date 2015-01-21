@@ -6,8 +6,8 @@
 //  Copyright (c) 2014年 Hiroyuki Tenngann. All rights reserved.
 //
 
-#ifndef User_Access_Bridge_Header_h
-#define User_Access_Bridge_Header_h
+#ifndef hoge_Access_Bridge_Header_h
+#define hoge_Access_Bridge_Header_h
 
 #import <FacebookSDK/FacebookSDK.h>
 

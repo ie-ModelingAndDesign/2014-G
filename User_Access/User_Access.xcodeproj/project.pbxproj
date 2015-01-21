@@ -34,7 +34,7 @@
 		AED5CF511A40696800FFB421 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
 		AED5CF521A40696800FFB421 /* FBAudienceNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBAudienceNetwork.framework; sourceTree = "<group>"; };
 		AEE5BFE91A3EFF9C00F7805A /* User_Access.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = User_Access.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		AEE5BFED1A3EFF9C00F7805A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AEE5BFED1A3EFF9C00F7805A /* Info_facebook.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info_facebook.plist; sourceTree = "<group>"; };
 		AEE5BFEE1A3EFF9C00F7805A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AEE5BFF01A3EFF9C00F7805A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		AEE5BFF31A3EFF9C00F7805A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -117,7 +117,7 @@
 		AEE5BFEC1A3EFF9C00F7805A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				AEE5BFED1A3EFF9C00F7805A /* Info.plist */,
+				AEE5BFED1A3EFF9C00F7805A /* Info_facebook.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -368,7 +368,7 @@
 					"$(inherited)",
 					/Users/e135713/Documents/FacebookSDK,
 				);
-				INFOPLIST_FILE = User_Access/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/User_Access/Info_facebook.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "User_Access/Bridge-Header.h";
@@ -383,7 +383,7 @@
 					"$(inherited)",
 					/Users/e135713/Documents/FacebookSDK,
 				);
-				INFOPLIST_FILE = User_Access/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/User_Access/Info_facebook.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "User_Access/Bridge-Header.h";
