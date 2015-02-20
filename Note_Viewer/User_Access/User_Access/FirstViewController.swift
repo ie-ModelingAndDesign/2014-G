@@ -85,7 +85,7 @@ class FirstViewController: UIViewController {
         
         var alert = UIAlertView()
         alert.title = "Logout"
-        alert.message = "ログアウトしました．わずらわしいけどアプリを再起動してください"
+        alert.message = "ログアウトしました"
         alert.addButtonWithTitle("OK")
         alert.show()
         
