@@ -12,11 +12,12 @@ import UIKit;
 
 class PDFViewController: UIViewController, UIWebViewDelegate {
     
-    //var webview: UIWebView = UIWebView()
+    var webview: UIWebView = UIWebView()
+    
     var myButtonToBack: UIButton!
     var nextpage: UIButton!
     var backpage: UIButton!
-    var page : UInt = 1
+    var page :UInt = 1
     var number_of_page :UInt!
    //
     var noteurl : String!
@@ -25,17 +26,28 @@ class PDFViewController: UIViewController, UIWebViewDelegate {
    // }
     override func viewDidLoad() {
         super.viewDidLoad()
-        var url = NSURL(string :noteurl)
+        //var url = NSURL(string :noteurl)
         //var url = NSURL(string: "http://ie.u-ryukyu.ac.jp/~e135761/PostingNote/information6.pdf")
         //var url:NSURL! = NSBundle.mainBundle().URLForResource("http://ie.u-ryukyu.ac.jp/~e135761/PostingNote/information6.pdf", withExtension:nil)
-        var pdf:CGPDFDocumentRef = CGPDFDocumentCreateWithURL(url);
-        var rect = UIScreen.mainScreen().bounds;
+        //var pdf:CGPDFDocumentRef = CGPDFDocumentCreateWithURL(url);
+        //var rect = UIScreen.mainScreen().bounds;
         
-        number_of_page = CGPDFDocumentGetNumberOfPages(pdf)
+        //number_of_page = CGPDFDocumentGetNumberOfPages(pdf)
         
-        var myview:PDFView = PDFView(frame:rect);
-        myview._pdfPage = CGPDFDocumentGetPage(pdf, page)
-        self.view.addSubview(myview)
+        //var myview:PDFView = PDFView(frame:rect);
+        //myview._pdfPage = CGPDFDocumentGetPage(pdf, page)
+        //myview._pdfPage = CGPDfDocument
+        //self.view.addSubview(myview)
+        
+        //
+        self.webview.frame = self.view.bounds
+        self.webview.delegate = self;
+        self.view.addSubview(self.webview)
+        
+        var url = NSURL(string :noteurl)
+        var urlRequest: NSURLRequest = NSURLRequest(URL: url!)
+        self.webview.loadRequest(urlRequest)
+        //
         
         
         myButtonToBack = UIButton(frame: CGRectMake(0,0,90,40))
@@ -49,30 +61,30 @@ class PDFViewController: UIViewController, UIWebViewDelegate {
         //Viewに追加
         self.view.addSubview(myButtonToBack);
         
-        nextpage = UIButton(frame: CGRectMake(0,0,70,40))
-        nextpage.backgroundColor = UIColor.redColor();
-        nextpage.layer.masksToBounds = true
-        nextpage.setTitle(" => ", forState: .Normal)
-        nextpage.layer.cornerRadius = 20.0
-        nextpage.layer.position = CGPoint(x: self.view.bounds.width*2/4 , y:self.view.bounds.height-35)
-        nextpage.addTarget(self, action: "next:", forControlEvents: .TouchUpInside)
-        
-        //Viewに追加
-        self.view.addSubview(nextpage);
-        
-        backpage = UIButton(frame: CGRectMake(0,0,70,40))
-        backpage.backgroundColor = UIColor.redColor();
-        backpage.layer.masksToBounds = true
-        backpage.setTitle(" <= ", forState: .Normal)
-        backpage.layer.cornerRadius = 20.0
-        backpage.layer.position = CGPoint(x: self.view.bounds.width*1/4 , y:self.view.bounds.height-35)
-        backpage.addTarget(self, action: "back:", forControlEvents: .TouchUpInside)
-        
-        //Viewに追加
-        self.view.addSubview(backpage);
+        //nextpage = UIButton(frame: CGRectMake(0,0,70,40))
+        //nextpage.backgroundColor = UIColor.redColor();
+        //nextpage.layer.masksToBounds = true
+        //nextpage.setTitle(" => ", forState: .Normal)
+        //nextpage.layer.cornerRadius = 20.0
+        //nextpage.layer.position = CGPoint(x: self.view.bounds.width*2/4 , y:self.view.bounds.height-35)
+        //nextpage.addTarget(self, action: "next:", forControlEvents: .TouchUpInside)
+        //
+        ////Viewに追加
+        //self.view.addSubview(nextpage);
+        //
+        //backpage = UIButton(frame: CGRectMake(0,0,70,40))
+        //backpage.backgroundColor = UIColor.redColor();
+        //backpage.layer.masksToBounds = true
+        //backpage.setTitle(" <= ", forState: .Normal)
+        //backpage.layer.cornerRadius = 20.0
+        //backpage.layer.position = CGPoint(x: self.view.bounds.width*1/4 , y:self.view.bounds.height-35)
+        //backpage.addTarget(self, action: "back:", forControlEvents: .TouchUpInside)
+        //
+        ////Viewに追加
+        //self.view.addSubview(backpage);
         
     }
-    
+
     func didReceieveMemoryWarning(){
         super.didReceiveMemoryWarning()
     }
