@@ -22,6 +22,13 @@ class ThirdViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // 背景に画像を設定する.
+        let myImage = UIImage(named: "2.jpg")!
+        var myImageView = UIImageView()
+        myImageView.image = myImage
+        myImageView.frame = CGRectMake(-10, -28, myImage.size.width, myImage.size.height)
+        self.view.addSubview(myImageView)
+        
         // 背景色を設定.
         //self.view.backgroundColor = UIColor.blueColor()
         self.view.backgroundColor = UIColor.hexStr("79c0fe", alpha: 1)
