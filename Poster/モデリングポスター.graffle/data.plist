@@ -53,6 +53,36 @@
 	<array>
 		<dict>
 			<key>Bounds</key>
+			<string>{{422, 60}, {68, 48}}</string>
+			<key>Class</key>
+			<string>ShapedGraphic</string>
+			<key>ID</key>
+			<integer>34</integer>
+			<key>ImageID</key>
+			<integer>9</integer>
+			<key>Shape</key>
+			<string>Rectangle</string>
+			<key>Style</key>
+			<dict>
+				<key>fill</key>
+				<dict>
+					<key>Draws</key>
+					<string>NO</string>
+				</dict>
+				<key>shadow</key>
+				<dict>
+					<key>Draws</key>
+					<string>NO</string>
+				</dict>
+				<key>stroke</key>
+				<dict>
+					<key>Draws</key>
+					<string>NO</string>
+				</dict>
+			</dict>
+		</dict>
+		<dict>
+			<key>Bounds</key>
 			<string>{{299, 378.0343017578125}, {231, 128}}</string>
 			<key>Class</key>
 			<string>ShapedGraphic</string>
@@ -310,13 +340,9 @@
 		</dict>
 		<dict>
 			<key>Bounds</key>
-			<string>{{465, 574}, {72, 42}}</string>
+			<string>{{461.92462304468006, 573.82323232323381}, {74.894472139868768, 40.939393939394051}}</string>
 			<key>Class</key>
 			<string>ShapedGraphic</string>
-			<key>FitText</key>
-			<string>YES</string>
-			<key>Flow</key>
-			<string>Resize</string>
 			<key>ID</key>
 			<integer>26</integer>
 			<key>Shape</key>
@@ -360,7 +386,7 @@
 		</dict>
 		<dict>
 			<key>Bounds</key>
-			<string>{{460.5, 567}, {81.000007629394531, 84}}</string>
+			<string>{{457.24371853593851, 567}, {84.256289093456033, 81.878787878788103}}</string>
 			<key>Class</key>
 			<string>ShapedGraphic</string>
 			<key>ID</key>
@@ -379,7 +405,7 @@
 		</dict>
 		<dict>
 			<key>Bounds</key>
-			<string>{{442, 661}, {81.000007629394531, 104}}</string>
+			<string>{{437.99999999999994, 658.62626262626259}, {84.256289093456033, 101.3737373737375}}</string>
 			<key>Class</key>
 			<string>ShapedGraphic</string>
 			<key>ID</key>
@@ -599,7 +625,7 @@
 		</dict>
 		<dict>
 			<key>Bounds</key>
-			<string>{{59.75, 91.625}, {124.5, 30}}</string>
+			<string>{{61.505681072969878, 91.625000000000028}, {132.98863276057264, 31.097762416785894}}</string>
 			<key>Class</key>
 			<string>ShapedGraphic</string>
 			<key>ID</key>
@@ -830,13 +856,9 @@
 		</dict>
 		<dict>
 			<key>Bounds</key>
-			<string>{{63, 132.125}, {117, 60}}</string>
+			<string>{{64.977271888004836, 133.60697926266076}, {124.97726934126109, 62.195524833571788}}</string>
 			<key>Class</key>
 			<string>ShapedGraphic</string>
-			<key>FitText</key>
-			<string>YES</string>
-			<key>Flow</key>
-			<string>Resize</string>
 			<key>ID</key>
 			<integer>12</integer>
 			<key>Shape</key>
@@ -880,7 +902,7 @@
 		</dict>
 		<dict>
 			<key>Bounds</key>
-			<string>{{34, 105.125}, {176.00000476837158, 93}}</string>
+			<string>{{33.999999999999915, 105.61899308755349}, {188.00000000000017, 96.40306349203631}}</string>
 			<key>Class</key>
 			<string>ShapedGraphic</string>
 			<key>ID</key>
@@ -950,9 +972,10 @@
 	<key>HPages</key>
 	<integer>1</integer>
 	<key>ImageCounter</key>
-	<integer>9</integer>
+	<integer>10</integer>
 	<key>ImageLinkBack</key>
 	<array>
+		<dict/>
 		<dict/>
 		<dict/>
 		<dict/>
@@ -961,6 +984,7 @@
 	</array>
 	<key>ImageList</key>
 	<array>
+		<string>image9.pdf</string>
 		<string>image8.pdf</string>
 		<string>image7.pdf</string>
 		<string>image6.pdf</string>
@@ -1004,7 +1028,7 @@
 	<key>MasterSheets</key>
 	<array/>
 	<key>ModificationDate</key>
-	<string>2015-02-20 11:59:00 +0000</string>
+	<string>2015-02-21 03:56:48 +0000</string>
 	<key>Modifier</key>
 	<string>Hiroyuki Tengan</string>
 	<key>NotesVisible</key>
@@ -1080,7 +1104,7 @@
 		<key>ExpandedCanvases</key>
 		<array/>
 		<key>Frame</key>
-		<string>{{293, 4}, {694, 774}}</string>
+		<string>{{164, 4}, {694, 774}}</string>
 		<key>ListView</key>
 		<true/>
 		<key>OutlineWidth</key>
@@ -1094,7 +1118,7 @@
 		<key>SidebarWidth</key>
 		<integer>120</integer>
 		<key>VisibleRegion</key>
-		<string>{{0, 147}, {559, 635}}</string>
+		<string>{{0, 4}, {559, 635}}</string>
 		<key>Zoom</key>
 		<real>1</real>
 		<key>ZoomValues</key>
