@@ -5,6 +5,7 @@
 //  Created by Kaito Oshiro on 2014/12/10.
 //  Copyright (c) 2014年 team-g. All rights reserved.
 //
+//  *****学年選択画面*****
 
 import Foundation
 
@@ -18,8 +19,12 @@ import Foundation
 
 class FirstViewController: UIViewController {
     
-    var myButtonNext: UIButton!
+    var e13: UIButton!
+    var e14: UIButton!
     var myButtonLogout: UIButton!
+    
+    var b1: [String] = ["工業数学1"]
+    var b2: [String] = ["情報ネットワーク2", "計算機アーキテクチャ"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,16 +41,29 @@ class FirstViewController: UIViewController {
         
         // ボタンの生成する.
         // 学年選択ボタン
-        myButtonNext = UIButton(frame: CGRectMake(0,0,120,50))
-        myButtonNext.backgroundColor = UIColor.redColor();
-        myButtonNext.layer.masksToBounds = true
-        myButtonNext.setTitle("e13", forState: .Normal)
-        myButtonNext.layer.cornerRadius = 20.0
-        myButtonNext.layer.position = CGPoint(x: self.view.bounds.width/2 , y:self.view.bounds.height-150)
-        myButtonNext.addTarget(self, action: "onClickMyButton:", forControlEvents: .TouchUpInside)
+        e13 = UIButton(frame: CGRectMake(0,0,120,50))
+        e13.backgroundColor = UIColor.redColor();
+        e13.layer.masksToBounds = true
+        e13.setTitle("e13", forState: .Normal)
+        e13.layer.cornerRadius = 20.0
+        e13.layer.position = CGPoint(x: self.view.bounds.width/2 , y:self.view.bounds.height-200)
+        e13.addTarget(self, action: "onClickMyButtonToe13:", forControlEvents: .TouchUpInside)
         
         // ボタンを追加する.
-        self.view.addSubview(myButtonNext);
+        self.view.addSubview(e13);
+        
+        // ボタンの生成する.
+        // 学年選択ボタン
+        //e14 = UIButton(frame: CGRectMake(0,0,120,50))
+        //e14.backgroundColor = UIColor.redColor();
+        //e14.layer.masksToBounds = true
+        //e14.setTitle("e14", forState: .Normal)
+        //e14.layer.cornerRadius = 20.0
+        //e14.layer.position = CGPoint(x: self.view.bounds.width/2 , y:self.view.bounds.height-130)
+        //e14.addTarget(self, action: "onClickMyButtonToe13:", forControlEvents: .TouchUpInside)
+        //
+        //// ボタンを追加する.
+        //self.view.addSubview(e14);
         
         
         // ボタンの生成する.
@@ -66,11 +84,31 @@ class FirstViewController: UIViewController {
     //
     // ボタンイベント
     //
-    func onClickMyButton(sender: UIButton){
+    func onClickMyButtonToe13(sender: UIButton){
         
         // 遷移するViewを定義する.
         // 次の授業選択に移動する
-        let mySecondViewController: UIViewController = SecondViewController()
+        let mySecondViewController = SecondViewController()
+        mySecondViewController.lecture = b2
+        
+        // アニメーションを設定する.
+        mySecondViewController.modalTransitionStyle = UIModalTransitionStyle.PartialCurl
+        
+        // Viewの移動する.
+        self.presentViewController(mySecondViewController, animated: true, completion: nil)
+        
+    }
+    
+    //
+    // ボタンイベント
+    //
+    func onClickMyButtonToe14(sender: UIButton){
+        
+        
+        // 遷移するViewを定義する.
+        // 次の授業選択に移動する
+        let mySecondViewController = SecondViewController()
+        mySecondViewController.lecture = b1
         
         // アニメーションを設定する.
         mySecondViewController.modalTransitionStyle = UIModalTransitionStyle.PartialCurl

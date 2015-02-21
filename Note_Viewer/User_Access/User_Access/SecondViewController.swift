@@ -5,6 +5,7 @@
 //  Created by Kaito Oshiro on 2014/12/10.
 //  Copyright (c) 2014年 team-g. All rights reserved.
 //
+//  *****授業選択画面*****
 
 import Foundation
 //
@@ -18,6 +19,8 @@ class SecondViewController: UIViewController {
     
     var myButtonBefore: UIButton!
     var myButtonToNote: UIButton!
+    
+    var lecture: [String]!
     
     override func viewDidLoad() {
         super.viewDidLoad()

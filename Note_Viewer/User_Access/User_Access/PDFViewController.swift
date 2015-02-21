@@ -5,6 +5,7 @@
 //  Created by Kaito Oshiro on 2014/12/11.
 //  Copyright (c) 2014年 team-g. All rights reserved.
 //
+//  *****ノート閲覧画面*****
 
 import Foundation
 
@@ -90,21 +91,21 @@ class PDFViewController: UIViewController, UIWebViewDelegate {
     }
     
     
-    func next(sender: UIButton) {
-        if (page < number_of_page) {
-            UIModalTransitionStyle.FlipHorizontal
-            page += 1
-            viewDidLoad()
-        }
-    }
-    
-    func back(sender: UIButton) {
-        if (page > 1) {
-            UIModalTransitionStyle.FlipHorizontal
-            page -= 1
-            viewDidLoad()
-        }
-    }
+    //func next(sender: UIButton) {
+    //    if (page < number_of_page) {
+    //        UIModalTransitionStyle.FlipHorizontal
+    //        page += 1
+    //        viewDidLoad()
+    //    }
+    //}
+    //
+    //func back(sender: UIButton) {
+    //    if (page > 1) {
+    //        UIModalTransitionStyle.FlipHorizontal
+    //        page -= 1
+    //        viewDidLoad()
+    //    }
+    //}
     
     
     //ボタンがタップされたときの処理メソッド

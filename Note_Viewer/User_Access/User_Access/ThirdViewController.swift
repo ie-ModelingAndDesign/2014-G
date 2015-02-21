@@ -5,6 +5,7 @@
 //  Created by Kaito Oshiro on 2014/12/11.
 //  Copyright (c) 2014年 team-g. All rights reserved.
 //
+//  *****ノート選択画面*****
 
 import Foundation
 //
