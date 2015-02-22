@@ -37,17 +37,17 @@ class SecondViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         
         
         // 背景に画像を設定する.
-        let myImage = UIImage(named: "2.jpg")!
+        let myImage = UIImage(named: "note.png")!
         var myImageView = UIImageView()
         myImageView.image = myImage
-        myImageView.frame = CGRectMake(-10, -28, myImage.size.width, myImage.size.height)
+        myImageView.frame = CGRectMake(0, 0, myImage.size.width*2/5, myImage.size.height*5/9)
         self.view.addSubview(myImageView)
         
         
         //-------------------------
         // サイズを指定する.
         myUIPicker.frame = CGRectMake(0,self.view.bounds.height/2,self.view.bounds.width, 180.0)
-        myUIPicker.backgroundColor = UIColor.grayColor()
+        //myUIPicker.backgroundColor = UIColor.grayColor()
         // Delegateを設定する.
         myUIPicker.alpha = 0.7
         myUIPicker.delegate = self

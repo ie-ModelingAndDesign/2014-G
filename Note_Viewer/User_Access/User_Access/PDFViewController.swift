@@ -16,7 +16,7 @@ import CoreData
 class PDFViewController: UIViewController, UIWebViewDelegate, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
     var textField: UITextField!
     
-var myValues: NSArray = ["★","★★","★★★","★★★★"]//
+var myValues: NSArray = ["★☆☆☆☆","★★☆☆☆","★★★☆☆","★★★★☆","★★★★★"]//
     var myUIPicker: UIPickerView = UIPickerView()
     
     var allDataArr = [NSManagedObject]()
@@ -68,7 +68,7 @@ var myValues: NSArray = ["★","★★","★★★","★★★★"]//
         var urlRequest: NSURLRequest = NSURLRequest(URL: url!)
         self.webview.loadRequest(urlRequest)
         //---------------
-        myUIPicker.frame = CGRectMake(self.view.bounds.width*3/4-30,self.view.bounds.height*3/4,150, 180.0)
+        myUIPicker.frame = CGRectMake(self.view.bounds.width*3/4-60,self.view.bounds.height*3/4+50,150, 180.0)
         //myUIPicker.backgroundColor = UIColor.grayColor()
         // Delegateを設定する.
         myUIPicker.alpha = 0.7
@@ -82,19 +82,40 @@ var myValues: NSArray = ["★","★★","★★★","★★★★"]//
         self.view.addSubview(myUIPicker)
         
         //textFIeld
-        textField = UITextField(frame: CGRectMake(self.view.frame.size.width-100, 50, 100, 50))
-        textField.text = hoge
+        textField = UITextField(frame: CGRectMake(self.view.frame.size.width-100, 25, 100, 50))
+        textField.text = "☆☆☆☆☆"
         textField.delegate = self
         textField.placeholder = hoge
         //textField.sizeToFit()
         //textField.borderStyle = UITextBorderStyle.RoundedRect
         self.view.addSubview(textField)
+        
+        let manageContext = appDelegate.managedObjectContext!
+        /* Set search conditions */
+        let fetchRequest = NSFetchRequest(entityName: "Person")
+        var error: NSError?
+        
+        /* Get result array from ManagedObjectContext */
+        let fetchResults = manageContext.executeFetchRequest(fetchRequest, error: &error)
+        if let results: Array = fetchResults {
+            for obj:AnyObject in results {
+                allDataArr.append(obj as NSManagedObject)
+                let name:String? = obj.valueForKey("name") as? String
+                println(name)
+                textField.text = name
+            }
+            println(results.count)
+        } else {
+            println("Could not fetch \(error) , \(error!.userInfo)")
+        }
+        
+        
         //textField
         //-------------
         myButton1 = UIButton(frame: CGRectMake(0,0,50,40))
         myButton1.backgroundColor = UIColor.redColor();
         myButton1.layer.masksToBounds = true
-        myButton1.setTitle("add", forState: .Normal)
+        myButton1.setTitle("rating", forState: .Normal)
         myButton1.layer.cornerRadius = 20.0
         myButton1.layer.position = CGPoint(x: 110 , y:50)
         //myButton1.addTarget(self, action: "tapAddButton:", forControlEvents: .TouchUpInside)
@@ -108,32 +129,11 @@ var myValues: NSArray = ["★","★★","★★★","★★★★"]//
         myButton2.setTitle("delete", forState: .Normal)
         myButton2.layer.cornerRadius = 20.0
         myButton2.layer.position = CGPoint(x: 170 ,y: 50)
-        myButton2.addTarget(self, action: "tapDeleteButton:", forControlEvents: .TouchUpInside)
+        myButton2.addTarget(self, action: "tapAllDeleteButton:", forControlEvents: .TouchUpInside)
         
         //Viewに追加
         self.view.addSubview(myButton2);
         
-       /* myButton3 = UIButton(frame: CGRectMake(0,0,90,40))
-        myButton3.backgroundColor = UIColor.redColor();
-        myButton3.layer.masksToBounds = true
-        myButton3.setTitle("update", forState: .Normal)
-        myButton3.layer.cornerRadius = 20.0
-        myButton3.layer.position = CGPoint(x: self.view.bounds.width*3/4 , y:self.view.bounds.height-135)
-        myButton3.addTarget(self, action: "tapUpdateButton:", forControlEvents: .TouchUpInside)
-        
-        //Viewに追加
-        self.view.addSubview(myButton3);*/
-        
-        myButton4 = UIButton(frame: CGRectMake(0,0,50,40))
-        myButton4.backgroundColor = UIColor.redColor();
-        myButton4.layer.masksToBounds = true
-        myButton4.setTitle("fetch", forState: .Normal)
-        myButton4.layer.cornerRadius = 20.0
-        myButton4.layer.position = CGPoint(x: 230 , y:50)
-        myButton4.addTarget(self, action: "tapFetchButton:", forControlEvents: .TouchUpInside)
-        
-        //Viewに追加
-        self.view.addSubview(myButton4);
         //--------
         myButtonToBack = UIButton(frame: CGRectMake(0,0,50,40))
         myButtonToBack.backgroundColor = UIColor.redColor();
@@ -183,6 +183,7 @@ var myValues: NSArray = ["★","★★","★★★","★★★★"]//
         
         /* Set the name attribute using key-value coding */
         personObject.setValue(name, forKey: "name")
+        textField.text = name
         
         /* Error handling */
         var error: NSError?
@@ -228,6 +229,7 @@ var myValues: NSArray = ["★","★★","★★★","★★★★"]//
         /* Change value of managedObject */
         managedObject.setValue(newName, forKey: "name")
         
+        
         /* Save value to managedObjectContext */
         var error: NSError?
         if !managedContext.save(&error) {
@@ -242,12 +244,26 @@ var myValues: NSArray = ["★","★★","★★★","★★★★"]//
         /* Get ManagedObjectContext from AppDelegate */
         let appDelegate: AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate
         let managedContext: NSManagedObjectContext = appDelegate.managedObjectContext!
+        let manageContext = appDelegate.managedObjectContext!
+        
+        /* Set search conditions */
+        let fetchRequest = NSFetchRequest(entityName: "Person")
+        var error: NSError?
+        
+        /* Get result array from ManagedObjectContext */
+        let fetchResults = manageContext.executeFetchRequest(fetchRequest, error: &error)
+        if let results: Array = fetchResults {
+            for obj:AnyObject in results {
+                /* Delete managedObject from managed context */
+                managedContext.deleteObject(managedObject)
+            }
+        }
         
         /* Delete managedObject from managed context */
-        managedContext.deleteObject(managedObject)
+        //managedContext.deleteObject(managedObject)
         
         /* Save value to managed context */
-        var error: NSError?
+        //var error: NSError?
         if !managedContext.save(&error) {
             println("Could not update \(error), \(error!.userInfo)")
         }
@@ -261,6 +277,7 @@ var myValues: NSArray = ["★","★★","★★★","★★★★"]//
         let name:String = hoge
         saveName(name)
         fetchPersonData()
+        
     }
     
     func tapDeleteButton(sender: AnyObject) {
@@ -270,18 +287,16 @@ var myValues: NSArray = ["★","★★","★★★","★★★★"]//
         fetchPersonData()
     }
     
-    func tapUpdateButton(sender: AnyObject) {
-        if allDataArr.count > 0 {
-            updateName(allDataArr[0], newName: "new updated name")
+    func tapAllDeleteButton(sender: AnyObject) {
+        var a = allDataArr.count
+        while(a > 0){
+            deleteName(allDataArr[a-1])
+            fetchPersonData()
+            a--
         }
-        fetchPersonData()
+        textField.text = "☆☆☆☆☆"
     }
     
-    func tapFetchButton(sender: AnyObject) {
-        fetchPersonData()
-        
-    }
-
 //------------------------------------------------------------
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
         return 1
@@ -305,10 +320,7 @@ var myValues: NSArray = ["★","★★","★★★","★★★★"]//
     Pickerが選択された際に呼ばれる.
     */
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        //println("row: \(row)")
-        //println("value: \(myValues[row])")
         hoge = myValues[row] as NSString
-        textField.text = myValues[row] as NSString
         myButton1.addTarget(self, action: "tapAddButton:", forControlEvents: .TouchUpInside)
         
     }

@@ -11,15 +11,24 @@ import UIkit
 
 class MainViewController: UIViewController {
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view, typically from a nib.
+        
+       /* // 背景に画像を設定する.
+        let myImage = UIImage(named: "wood.JPG")!
+        var myImageView = UIImageView()
+        myImageView.image = myImage
+        myImageView.frame = CGRectMake(-10, -28, myImage.size.width, myImage.size.height)
+        self.view.addSubview(myImageView)
+        */
+        
+    }
+    
     @IBOutlet var FaceBookBtn: UIButton!
     
     @IBAction func FaceBookBtnAction(sender: AnyObject) {
         //nope
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
     }
     
     

@@ -16,31 +16,34 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="wood.JPG" translatesAutoresizingMaskIntoConstraints="NO" id="Ves-YY-bZx">
-                                <rect key="frame" x="-125" y="0.0" width="725" height="715"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="notebook.png" translatesAutoresizingMaskIntoConstraints="NO" id="sMn-si-0RC">
-                                <rect key="frame" x="-37" y="72" width="409" height="528"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="navernote2.png" translatesAutoresizingMaskIntoConstraints="NO" id="rHa-WQ-hAl">
-                                <rect key="frame" x="43" y="240" width="299" height="88"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hRV-Os-Q5j">
-                                <rect key="frame" x="77" y="452" width="230" height="50"/>
-                                <state key="normal" image="Glogin.gif">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RsF-Ry-z8F">
+                                <rect key="frame" x="266" y="315" width="68" height="30"/>
+                                <state key="normal" title="Facebook">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RsF-Ry-z8F">
-                                <rect key="frame" x="56" y="379" width="274" height="66"/>
-                                <state key="normal" image="FBlogin.gif"/>
                                 <connections>
                                     <action selector="FaceBookBtnAction:" destination="cL2-aw-vnl" eventType="touchDown" id="Bax-md-uNg"/>
                                     <segue destination="vXZ-lx-hvc" kind="show" id="UV4-54-5AT"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hRV-Os-Q5j">
+                                <rect key="frame" x="271" y="335" width="59" height="30"/>
+                                <state key="normal" title="Google+">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="RsF-Ry-z8F" secondAttribute="centerX" id="G26-PI-Kqi"/>
+                            <constraint firstAttribute="centerX" secondItem="hRV-Os-Q5j" secondAttribute="centerX" id="HDv-7m-UZ7"/>
+                            <constraint firstAttribute="centerY" secondItem="hRV-Os-Q5j" secondAttribute="centerY" constant="-50" id="Lqm-oA-6Qd"/>
+                            <constraint firstAttribute="centerX" secondItem="hRV-Os-Q5j" secondAttribute="centerX" id="PYe-5Y-CKh"/>
+                            <constraint firstAttribute="centerY" secondItem="RsF-Ry-z8F" secondAttribute="centerY" constant="-30" id="TMx-WQ-Mod"/>
+                            <constraint firstAttribute="centerY" secondItem="RsF-Ry-z8F" secondAttribute="centerY" constant="-30" id="dHo-X2-2uh"/>
+                            <constraint firstAttribute="centerX" secondItem="RsF-Ry-z8F" secondAttribute="centerX" id="eM6-5c-hgE"/>
+                            <constraint firstAttribute="centerY" secondItem="hRV-Os-Q5j" secondAttribute="centerY" constant="-50" id="zvt-kh-ApW"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="FaceBookBtn" destination="RsF-Ry-z8F" id="0il-vj-VKT"/>
@@ -48,7 +51,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mT5-QU-rnD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-503" y="123"/>
+            <point key="canvasLocation" x="-423" y="137"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="ufC-wZ-h7g">
@@ -62,16 +65,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xBd-8G-EzB" customClass="UIImageView">
-                                <rect key="frame" x="113" y="56" width="150" height="150"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="note.png" translatesAutoresizingMaskIntoConstraints="NO" id="SZe-n7-upv">
-                                <rect key="frame" x="0.0" y="47" width="375" height="531"/>
-                            </imageView>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GhA-d3-ULe" customClass="FBLoginView">
                                 <rect key="frame" x="87" y="424" width="200" height="100"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xBd-8G-EzB" customClass="UIImageView">
+                                <rect key="frame" x="113" y="56" width="150" height="150"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MMi-sC-3DG">
                                 <rect key="frame" x="97" y="257" width="182" height="16"/>
@@ -110,12 +110,4 @@
             </objects>
         </scene>
     </scenes>
-    <resources>
-        <image name="FBlogin.gif" width="180" height="50"/>
-        <image name="Glogin.gif" width="180" height="50"/>
-        <image name="navernote2.png" width="828" height="150"/>
-        <image name="note.png" width="1074" height="1517"/>
-        <image name="notebook.png" width="344" height="451"/>
-        <image name="wood.JPG" width="3008" height="2000"/>
-    </resources>
 </document>
