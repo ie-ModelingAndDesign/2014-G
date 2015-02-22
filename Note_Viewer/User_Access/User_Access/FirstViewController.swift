@@ -23,8 +23,10 @@ class FirstViewController: UIViewController {
     var e14: UIButton!
     var myButtonLogout: UIButton!
     
-    var b1: [String] = ["工業数学1"]
-    var b2: [String] = ["情報ネットワーク2", "計算機アーキテクチャ"]
+    var b1: [[String]] = [["アルゴリズムとデータ構造", "レポート", "http://ie.u-ryukyu.ac.jp/~e135761/PostingNote/algo/algo3.pdf"],["工業数学1", "期末テスト", "http://ie.u-ryukyu.ac.jp/~e135761/PostingNote/kosu1/kosu.pdf"]]
+    var b2: [[String]] = [["情報ネットワーク2", "第六回講義", "http://ie.u-ryukyu.ac.jp/~e135761/PostingNote/information/information6.pdf"], ["計算機アーキテクチャ", "課題", "http://ie.u-ryukyu.ac.jp/~e135761/PostingNote/architecture/e135761.pdf"]]
+    //var b1: [String] = ["工業数学1"]
+    //var b2: [String] = ["情報ネットワーク2", "計算機アーキテクチャ"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,16 +56,16 @@ class FirstViewController: UIViewController {
         
         // ボタンの生成する.
         // 学年選択ボタン
-        //e14 = UIButton(frame: CGRectMake(0,0,120,50))
-        //e14.backgroundColor = UIColor.redColor();
-        //e14.layer.masksToBounds = true
-        //e14.setTitle("e14", forState: .Normal)
-        //e14.layer.cornerRadius = 20.0
-        //e14.layer.position = CGPoint(x: self.view.bounds.width/2 , y:self.view.bounds.height-130)
-        //e14.addTarget(self, action: "onClickMyButtonToe13:", forControlEvents: .TouchUpInside)
-        //
-        //// ボタンを追加する.
-        //self.view.addSubview(e14);
+        e14 = UIButton(frame: CGRectMake(0,0,120,50))
+        e14.backgroundColor = UIColor.redColor();
+        e14.layer.masksToBounds = true
+        e14.setTitle("e14", forState: .Normal)
+        e14.layer.cornerRadius = 20.0
+        e14.layer.position = CGPoint(x: self.view.bounds.width/2 , y:self.view.bounds.height-130)
+        e14.addTarget(self, action: "onClickMyButtonToe14:", forControlEvents: .TouchUpInside)
+        
+        // ボタンを追加する.
+        self.view.addSubview(e14);
         
         
         // ボタンの生成する.
@@ -89,7 +91,24 @@ class FirstViewController: UIViewController {
         // 遷移するViewを定義する.
         // 次の授業選択に移動する
         let mySecondViewController = SecondViewController()
-        mySecondViewController.lecture = b2
+        
+        //for lec in b2 {
+        //    var i: Int = 0
+        //    mySecondViewController.lecture[i] = b2[i][0]
+        //    i++
+        //}
+        
+        mySecondViewController.information = b2
+        var temp: [String] = ["0", "0"]
+        for var i=0; i<b2.count; i++ {
+            temp[i] = b2[i][0]
+        }
+        mySecondViewController.lecture = temp
+        //mySecondViewController.lecture = b2
+        //mySecondViewController.lecture = b2
+        //
+        //var innote: [String] = ["第六回講義"]
+        //var archinote: [String] = ["課題"]
         
         // アニメーションを設定する.
         mySecondViewController.modalTransitionStyle = UIModalTransitionStyle.PartialCurl
@@ -104,11 +123,32 @@ class FirstViewController: UIViewController {
     //
     func onClickMyButtonToe14(sender: UIButton){
         
-        
         // 遷移するViewを定義する.
         // 次の授業選択に移動する
         let mySecondViewController = SecondViewController()
-        mySecondViewController.lecture = b1
+        mySecondViewController.information = b1
+        var temp: [String] = ["0","0"]
+        for var i=0; i<b1.count; i++ {
+            temp[i] = b1[i][0]
+        }
+        mySecondViewController.lecture = temp
+        //mySecondViewController.num = 0
+        
+        //mySecondViewController.lecture[0] = b1[0][0]
+        
+        
+        //for lec in b1 {
+        //    var i: Int = 0
+        //    mySecondViewController.lecture[i] = b1[i][0]
+        //    i++
+        //}
+        
+        //for var i=0; i<=b1.count; i++ {
+        //    mySecondViewController.lecture[i] = b1[i][0]
+        //}
+        
+        //var note: [String] = ["期末テスト"]
+        
         
         // アニメーションを設定する.
         mySecondViewController.modalTransitionStyle = UIModalTransitionStyle.PartialCurl
@@ -127,15 +167,18 @@ class FirstViewController: UIViewController {
         alert.addButtonWithTitle("OK")
         alert.show()
         
-        //// 次の授業選択に移動する
-        //let moveToViewController: UIViewController = ViewController()
-        //
-        //// アニメーションを設定する.
-        //moveToViewController.modalTransitionStyle = UIModalTransitionStyle.PartialCurl
-        //
-        //// Viewの移動する.
-        //self.presentViewController(moveToViewController, animated: true, completion: nil)
+        //self.dismissViewControllerAnimated(true, completion: nil)
+        //self.dismissViewControllerAnimated(true, completion: nil)
         
+       //// 次の授業選択に移動する
+       //let moveToViewController: UIViewController = ViewController()
+       //
+       //// アニメーションを設定する.
+       //moveToViewController.modalTransitionStyle = UIModalTransitionStyle.PartialCurl
+       //
+       //// Viewの移動する.
+       //self.presentViewController(moveToViewController, animated: true, completion: nil)
+       
     }
     
     override func didReceiveMemoryWarning() {

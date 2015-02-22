@@ -110,14 +110,17 @@ class PDFViewController: UIViewController, UIWebViewDelegate {
     
     //ボタンがタップされたときの処理メソッド
     func btn(sender: UIButton) {
-        // 遷移するViewを定義.
-        let myViewController: UIViewController = ThirdViewController()
         
-        // アニメーションを設定.
-        myViewController.modalTransitionStyle = UIModalTransitionStyle.FlipHorizontal
+        self.dismissViewControllerAnimated(true, completion: nil)
         
-        // Viewの移動.
-        self.presentViewController(myViewController, animated: true, completion: nil)
+        //// 遷移するViewを定義.
+        //let myViewController: UIViewController = ThirdViewController()
+        //
+        //// アニメーションを設定.
+        //myViewController.modalTransitionStyle = UIModalTransitionStyle.FlipHorizontal
+        //
+        //// Viewの移動.
+        //self.presentViewController(myViewController, animated: true, completion: nil)
     }
     
     func webView(webView: UIWebView!, shouldStartLoadWithRequest request: NSURLRequest!, navigationType: UIWebViewNavigationType) -> Bool {

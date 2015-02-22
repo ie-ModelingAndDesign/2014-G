@@ -29,13 +29,13 @@ class ViewController: UIViewController, FBLoginViewDelegate {
         println("This is where you perform a segue.")
         
         // 遷移するViewを定義.
-        let myViewController: UIViewController = FirstViewController()
+        let myViewController1: UIViewController = FirstViewController()
         
         // アニメーションを設定.
-        myViewController.modalTransitionStyle = UIModalTransitionStyle.FlipHorizontal
+        myViewController1.modalTransitionStyle = UIModalTransitionStyle.FlipHorizontal
         
         // Viewの移動.
-        self.presentViewController(myViewController, animated: true, completion: nil)
+        self.presentViewController(myViewController1, animated: true, completion: nil)
     }
     
     func loginViewFetchedUserInfo(loginView: FBLoginView!, user: FBGraphUser!) {
