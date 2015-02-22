@@ -16,7 +16,7 @@ import CoreData
 class PDFViewController: UIViewController, UIWebViewDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
     var textField: UITextField!
     
-    var myValues: NSArray = ["★","★★","★★★","★★★★"]
+var myValues: NSArray = ["★","★★","★★★","★★★★"]//
     var myUIPicker: UIPickerView = UIPickerView()
     
     var allDataArr = [NSManagedObject]()
@@ -39,18 +39,13 @@ class PDFViewController: UIViewController, UIWebViewDelegate, UIPickerViewDelega
    // init(url: String) {
    //     self.noteurl = url
    // }
+    var hoge:String = "•"
     override func viewDidLoad() {
         super.viewDidLoad()
         let appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
         let managedContext: NSManagedObjectContext = appDelegate.managedObjectContext!
         let entity = NSEntityDescription.entityForName("Person", inManagedObjectContext: managedContext)
- //textFIeld
-        textField = UITextField(frame: CGRectMake(self.view.frame.size.width/3, 200, 0, 0))
-        textField.text = "•"
-        textField.placeholder = "•"
-        textField.sizeToFit()
-        self.view.addSubview(textField)
-  //textField
+ 
         
         //var url = NSURL(string :noteurl)
         //var url = NSURL(string: "http://ie.u-ryukyu.ac.jp/~e135761/PostingNote/information6.pdf")
@@ -87,6 +82,13 @@ class PDFViewController: UIViewController, UIWebViewDelegate, UIPickerViewDelega
         // Viewに追加する.
         self.view.addSubview(myUIPicker)
         
+        //textFIeld
+        textField = UITextField(frame: CGRectMake(self.view.frame.size.width/6, 100, 100, 50))
+       // textField.text = "•"
+        textField.placeholder = hoge
+        textField.sizeToFit()
+        self.view.addSubview(textField)
+        //textField
         //-------------
         myButton1 = UIButton(frame: CGRectMake(0,0,50,40))
         myButton1.backgroundColor = UIColor.redColor();
@@ -164,6 +166,7 @@ class PDFViewController: UIViewController, UIWebViewDelegate, UIPickerViewDelega
         //
         ////Viewに追加
         //self.view.addSubview(backpage);
+        
         
     }
     //-------------------------------------------------------------------------------------
@@ -250,9 +253,11 @@ class PDFViewController: UIViewController, UIWebViewDelegate, UIPickerViewDelega
         
     }
     
+    
     @IBAction func tapAddButton(sender: AnyObject) {
+var foo = 00
         let randInt:Int = Int(arc4random_uniform(10))
-        let name:String = "randInt"
+        let name:String = hoge
         saveName(name)
         fetchPersonData()
     }
@@ -300,8 +305,9 @@ class PDFViewController: UIViewController, UIWebViewDelegate, UIPickerViewDelega
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         //println("row: \(row)")
         //println("value: \(myValues[row])")
-        //tapAddButton.name = row
-        textField.text = myValues[row]
+        hoge = myValues[row] as NSString
+        textField.text = myValues[row] as NSString
+       
         myButton1.addTarget(self, action: "tapAddButton:", forControlEvents: .TouchUpInside)
         
     }
