@@ -13,7 +13,7 @@ import UIKit;
 import CoreData
 
 
-class PDFViewController: UIViewController, UIWebViewDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
+class PDFViewController: UIViewController, UIWebViewDelegate, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
     var textField: UITextField!
     
 var myValues: NSArray = ["★","★★","★★★","★★★★"]//
@@ -34,12 +34,11 @@ var myValues: NSArray = ["★","★★","★★★","★★★★"]//
     var backpage: UIButton!
     var page :UInt = 1
     var number_of_page :UInt!
-   //
+   
     var noteurl : String!
-   // init(url: String) {
-   //     self.noteurl = url
-   // }
-    var hoge:String = "•"
+
+    var hoge:String!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         let appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
@@ -83,10 +82,12 @@ var myValues: NSArray = ["★","★★","★★★","★★★★"]//
         self.view.addSubview(myUIPicker)
         
         //textFIeld
-        textField = UITextField(frame: CGRectMake(self.view.frame.size.width/6, 100, 100, 50))
-       // textField.text = "•"
+        textField = UITextField(frame: CGRectMake(self.view.frame.size.width-100, 50, 100, 50))
+        textField.text = hoge
+        textField.delegate = self
         textField.placeholder = hoge
-        textField.sizeToFit()
+        //textField.sizeToFit()
+        //textField.borderStyle = UITextBorderStyle.RoundedRect
         self.view.addSubview(textField)
         //textField
         //-------------
@@ -209,6 +210,7 @@ var myValues: NSArray = ["★","★★","★★★","★★★★"]//
                 allDataArr.append(obj as NSManagedObject)
                 let name:String? = obj.valueForKey("name") as? String
                 println(name)
+                textField.text = name
             }
             println(results.count)
         } else {
@@ -254,30 +256,30 @@ var myValues: NSArray = ["★","★★","★★★","★★★★"]//
     }
     
     
-    @IBAction func tapAddButton(sender: AnyObject) {
-var foo = 00
+    func tapAddButton(sender: AnyObject) {
         let randInt:Int = Int(arc4random_uniform(10))
         let name:String = hoge
         saveName(name)
         fetchPersonData()
     }
     
-    @IBAction func tapDeleteButton(sender: AnyObject) {
+    func tapDeleteButton(sender: AnyObject) {
         if allDataArr.count > 0 {
-            deleteName(allDataArr[0])
+            deleteName(allDataArr[allDataArr.count-1])
         }
         fetchPersonData()
     }
     
-    @IBAction func tapUpdateButton(sender: AnyObject) {
+    func tapUpdateButton(sender: AnyObject) {
         if allDataArr.count > 0 {
             updateName(allDataArr[0], newName: "new updated name")
         }
         fetchPersonData()
     }
     
-    @IBAction func tapFetchButton(sender: AnyObject) {
+    func tapFetchButton(sender: AnyObject) {
         fetchPersonData()
+        
     }
 
 //------------------------------------------------------------
@@ -307,7 +309,6 @@ var foo = 00
         //println("value: \(myValues[row])")
         hoge = myValues[row] as NSString
         textField.text = myValues[row] as NSString
-       
         myButton1.addTarget(self, action: "tapAddButton:", forControlEvents: .TouchUpInside)
         
     }
