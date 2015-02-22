@@ -53,13 +53,13 @@
 	<array>
 		<dict>
 			<key>Bounds</key>
-			<string>{{422, 60}, {68, 48}}</string>
+			<string>{{304, 378.30771255493158}, {224, 128}}</string>
 			<key>Class</key>
 			<string>ShapedGraphic</string>
 			<key>ID</key>
-			<integer>34</integer>
+			<integer>40</integer>
 			<key>ImageID</key>
-			<integer>9</integer>
+			<integer>15</integer>
 			<key>Shape</key>
 			<string>Rectangle</string>
 			<key>Style</key>
@@ -83,13 +83,163 @@
 		</dict>
 		<dict>
 			<key>Bounds</key>
-			<string>{{299, 378.0343017578125}, {231, 128}}</string>
+			<string>{{231.15660095214844, 233.97466278076081}, {79.843399047851591, 99.072731018066406}}</string>
 			<key>Class</key>
 			<string>ShapedGraphic</string>
 			<key>ID</key>
-			<integer>33</integer>
+			<integer>39</integer>
 			<key>ImageID</key>
-			<integer>8</integer>
+			<integer>14</integer>
+			<key>Shape</key>
+			<string>Rectangle</string>
+			<key>Style</key>
+			<dict>
+				<key>fill</key>
+				<dict>
+					<key>Draws</key>
+					<string>NO</string>
+				</dict>
+				<key>shadow</key>
+				<dict>
+					<key>Draws</key>
+					<string>NO</string>
+				</dict>
+				<key>stroke</key>
+				<dict>
+					<key>Draws</key>
+					<string>NO</string>
+				</dict>
+			</dict>
+		</dict>
+		<dict>
+			<key>Bounds</key>
+			<string>{{438, 232.24795055389404}, {79.505674362182617, 99.936119079589844}}</string>
+			<key>Class</key>
+			<string>ShapedGraphic</string>
+			<key>ID</key>
+			<integer>38</integer>
+			<key>ImageID</key>
+			<integer>13</integer>
+			<key>Shape</key>
+			<string>Rectangle</string>
+			<key>Style</key>
+			<dict>
+				<key>fill</key>
+				<dict>
+					<key>Draws</key>
+					<string>NO</string>
+				</dict>
+				<key>shadow</key>
+				<dict>
+					<key>Draws</key>
+					<string>NO</string>
+				</dict>
+				<key>stroke</key>
+				<dict>
+					<key>Draws</key>
+					<string>NO</string>
+				</dict>
+			</dict>
+		</dict>
+		<dict>
+			<key>Bounds</key>
+			<string>{{335.49431037902832, 233.11127595498516}, {79.50568962097168, 99.936119079589844}}</string>
+			<key>Class</key>
+			<string>ShapedGraphic</string>
+			<key>ID</key>
+			<integer>37</integer>
+			<key>ImageID</key>
+			<integer>12</integer>
+			<key>Shape</key>
+			<string>Rectangle</string>
+			<key>Style</key>
+			<dict>
+				<key>fill</key>
+				<dict>
+					<key>Draws</key>
+					<string>NO</string>
+				</dict>
+				<key>shadow</key>
+				<dict>
+					<key>Draws</key>
+					<string>NO</string>
+				</dict>
+				<key>stroke</key>
+				<dict>
+					<key>Draws</key>
+					<string>NO</string>
+				</dict>
+			</dict>
+		</dict>
+		<dict>
+			<key>Bounds</key>
+			<string>{{130.66227531433128, 234.83802032470629}, {79.505674362182617, 99.072731018066406}}</string>
+			<key>Class</key>
+			<string>ShapedGraphic</string>
+			<key>ID</key>
+			<integer>36</integer>
+			<key>ImageID</key>
+			<integer>11</integer>
+			<key>Shape</key>
+			<string>Rectangle</string>
+			<key>Style</key>
+			<dict>
+				<key>fill</key>
+				<dict>
+					<key>Draws</key>
+					<string>NO</string>
+				</dict>
+				<key>shadow</key>
+				<dict>
+					<key>Draws</key>
+					<string>NO</string>
+				</dict>
+				<key>stroke</key>
+				<dict>
+					<key>Draws</key>
+					<string>NO</string>
+				</dict>
+			</dict>
+		</dict>
+		<dict>
+			<key>Bounds</key>
+			<string>{{32.999990463256893, 234.83801937103266}, {79.505674362182617, 99.072731018066406}}</string>
+			<key>Class</key>
+			<string>ShapedGraphic</string>
+			<key>ID</key>
+			<integer>35</integer>
+			<key>ImageID</key>
+			<integer>10</integer>
+			<key>Shape</key>
+			<string>Rectangle</string>
+			<key>Style</key>
+			<dict>
+				<key>fill</key>
+				<dict>
+					<key>Draws</key>
+					<string>NO</string>
+				</dict>
+				<key>shadow</key>
+				<dict>
+					<key>Draws</key>
+					<string>NO</string>
+				</dict>
+				<key>stroke</key>
+				<dict>
+					<key>Draws</key>
+					<string>NO</string>
+				</dict>
+			</dict>
+		</dict>
+		<dict>
+			<key>Bounds</key>
+			<string>{{422, 60}, {68, 48}}</string>
+			<key>Class</key>
+			<string>ShapedGraphic</string>
+			<key>ID</key>
+			<integer>34</integer>
+			<key>ImageID</key>
+			<integer>9</integer>
 			<key>Shape</key>
 			<string>Rectangle</string>
 			<key>Style</key>
@@ -449,11 +599,11 @@
 					<key>Color</key>
 					<dict>
 						<key>b</key>
-						<string>1</string>
+						<string>0.0726757</string>
 						<key>g</key>
-						<string>1</string>
+						<string>0.343921</string>
 						<key>r</key>
-						<string>0.988636</string>
+						<string>0.542092</string>
 					</dict>
 				</dict>
 				<key>stroke</key>
@@ -781,11 +931,11 @@
 					<key>Color</key>
 					<dict>
 						<key>b</key>
-						<string>1</string>
+						<string>0.0437699</string>
 						<key>g</key>
-						<string>1</string>
+						<string>0.266382</string>
 						<key>r</key>
-						<string>0.988636</string>
+						<string>0.0590745</string>
 					</dict>
 				</dict>
 				<key>stroke</key>
@@ -972,9 +1122,14 @@
 	<key>HPages</key>
 	<integer>1</integer>
 	<key>ImageCounter</key>
-	<integer>10</integer>
+	<integer>16</integer>
 	<key>ImageLinkBack</key>
 	<array>
+		<dict/>
+		<dict/>
+		<dict/>
+		<dict/>
+		<dict/>
 		<dict/>
 		<dict/>
 		<dict/>
@@ -984,8 +1139,13 @@
 	</array>
 	<key>ImageList</key>
 	<array>
+		<string>image15.pdf</string>
+		<string>image14.png</string>
+		<string>image13.png</string>
+		<string>image12.png</string>
+		<string>image11.png</string>
+		<string>image10.png</string>
 		<string>image9.pdf</string>
-		<string>image8.pdf</string>
 		<string>image7.pdf</string>
 		<string>image6.pdf</string>
 		<string>image5.tiff</string>
@@ -1028,7 +1188,7 @@
 	<key>MasterSheets</key>
 	<array/>
 	<key>ModificationDate</key>
-	<string>2015-02-21 03:56:48 +0000</string>
+	<string>2015-02-22 17:08:24 +0000</string>
 	<key>Modifier</key>
 	<string>Hiroyuki Tengan</string>
 	<key>NotesVisible</key>
@@ -1104,7 +1264,7 @@
 		<key>ExpandedCanvases</key>
 		<array/>
 		<key>Frame</key>
-		<string>{{164, 4}, {694, 774}}</string>
+		<string>{{313, 4}, {694, 774}}</string>
 		<key>ListView</key>
 		<true/>
 		<key>OutlineWidth</key>
@@ -1118,7 +1278,7 @@
 		<key>SidebarWidth</key>
 		<integer>120</integer>
 		<key>VisibleRegion</key>
-		<string>{{0, 4}, {559, 635}}</string>
+		<string>{{0, 0}, {559, 635}}</string>
 		<key>Zoom</key>
 		<real>1</real>
 		<key>ZoomValues</key>
