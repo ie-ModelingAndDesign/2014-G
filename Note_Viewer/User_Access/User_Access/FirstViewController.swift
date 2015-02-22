@@ -161,11 +161,40 @@ class FirstViewController: UIViewController {
     func onClickMyButtonLogout(sender: UIButton){
         FBSession.activeSession().closeAndClearTokenInformation()
         
-        var alert = UIAlertView()
+        if objc_getClass("UIAlertController") != nil {
+            //UIAlertController使用
+            var alert = UIAlertController(title: "確認", message: "ログアウトしてもよろしいですか？", preferredStyle: .Alert)
+            
+            let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel) { (action) -> Void in
+                println("Cancel button tapped.")
+            }
+            
+            let okAction = UIAlertAction(title: "OK", style: .Default) { (action) -> Void in
+                println("OK button tapped.")
+                let moveToViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("Main") as UIViewController
+                //let moveToViewController: UIViewController = MainViewController()
+                moveToViewController.modalTransitionStyle = UIModalTransitionStyle.PartialCurl
+                self.presentViewController(moveToViewController, animated: true, completion: nil)
+            }
+            
+            alert.addAction(cancelAction)
+            alert.addAction(okAction)
+            
+            presentViewController(alert, animated: true, completion: nil)
+            
+        } else {
+            //UIAlertView使用
+            /*var av = UIAlertView(title: "Title", message:"Message", delegate: self, cancelButtonTitle: "Cancel", otherButtonTitles: "OK")
+            av.show()*/
+        }
+        
+        /*var alert = UIAlertView()
         alert.title = "Logout"
         alert.message = "ログアウトしました"
         alert.addButtonWithTitle("OK")
-        alert.show()
+        alert.show()*/
+        
+        
         
         //self.dismissViewControllerAnimated(true, completion: nil)
         //self.dismissViewControllerAnimated(true, completion: nil)
@@ -179,6 +208,14 @@ class FirstViewController: UIViewController {
        //// Viewの移動する.
        //self.presentViewController(moveToViewController, animated: true, completion: nil)
        
+    }
+    
+    func alertView(alertView: UIAlertView, clickedButtonAtIndex buttonIndex: Int) {
+        if (buttonIndex == alertView.cancelButtonIndex) {
+            //Canceled
+        } else {
+            //OK
+        }
     }
     
     override func didReceiveMemoryWarning() {

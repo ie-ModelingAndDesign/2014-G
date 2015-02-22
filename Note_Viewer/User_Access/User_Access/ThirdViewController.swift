@@ -59,6 +59,7 @@ class ThirdViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
         // Delegateを設定する.
         myUIPicker.alpha = 0.7
         myUIPicker.delegate = self
+
         
         // DataSourceを設定する.
         myUIPicker.dataSource = self

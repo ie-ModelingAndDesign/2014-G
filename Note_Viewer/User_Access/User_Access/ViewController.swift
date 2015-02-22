@@ -83,6 +83,10 @@ class ViewController: UIViewController, FBLoginViewDelegate {
         // Dispose of any resources that can be recreated.
     }
 
+    @IBOutlet var BackBtn: UIButton!
 
+    @IBAction func BackBtnAction(sender: AnyObject) {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
 }
 
